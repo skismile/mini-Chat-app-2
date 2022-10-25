@@ -10,8 +10,24 @@ const socket=socketIo(ENDPOINT,{transports:['websocket']})
 useEffect(()=>{
 
     socket.on("connect",()=>{
-    alert("connected")
+    alert(`joined user ${user}`)
     })
+
+    socket.emit("joined",{user})
+
+socket.on('welcome',(data)=>{
+  console.log(data.user,data.message)
+})
+
+socket.on("userJoined",(data)=>{
+
+  console.log(data.user,data.message)
+
+})
+
+return ()=>{
+
+}
 
 },[socket])
 

@@ -14,7 +14,7 @@ user=document.getElementById("joininput").value
 const Join = () => {
 
   const [name, setname] = useState("")
-console.log(name)
+
 
   return (
     <div className='JoinPage'>
